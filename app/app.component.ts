@@ -81,7 +81,7 @@ import game from './game';
                <img src = "tree.png">
              </div>
              <div *ngIf = "rowNo == 11 && colNo == 0">
-              <div class = "image">
+              <div class = "hero">
                 <img src = "hero.png">
                </div>
              </div>
