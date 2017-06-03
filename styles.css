@@ -1,26 +1,26 @@
 body {
     margin: 0px;
     font-family: "Fira Mono", Arial, Helvetica, sans-serif;
-    color: #FFFFFF;
-    background-color: #26a69a;
+    color: black;
+    background-image:URL('bg.png');
     font-size: 12pt;
 }
 
 .board {
-    width: 500px;
-    height: 500px;
+    width: 70px;
+    height: 50px;
 }
 
 .row {
-    width: 100%;
-    height: 33%;
+    width: 1000%;
+    height: 90%;
 }
 
 .cell {
     float: left;
-    background-color: #ff6e40;
+    background-color:lightyellow;
     height: 100%;
-    width: 33%;
+    width: 8.3%;
     outline: 1px solid black;
     position: relative;
 }
@@ -36,26 +36,35 @@ body {
 .board {
     text-align: center;
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 10%;
+    left: 27%;
     transform: translate(-50%, -50%);
 }
-
-.gameResults {
-    position: absolute;
-    top: 30;
-    left: 50%;
-    transform: translate(-50%);
+.image img{
+    background:transparent URL('hero.png') 0 0 no-repeat;
+    max-height: 96%;
+    width: 65%;
+    background-position-x: 0;
+    animation: walkingRight .5s steps(4) infinite;
 }
 
-.restart {
-    margin: 0 auto;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    line-height: 150px;
-    text-align: center;
-    font-size: 20pt;
-    color: black;
-    background-color: #ffd54f;
+@keyframes walkingRight {
+    from {
+    background-position: 0 -96px;
+    }
+    to {
+    background-position: -128px -96px;
+    }
+}
+.flag img{
+    background-image:URL('flag.png');
+    animation: flag 1s steps(10) infinite;
+}
+@keyframes flag {
+    from {
+    background-position: 0 0;
+    }
+    to {
+     background-position: 0 -500px;
+    }
 }
