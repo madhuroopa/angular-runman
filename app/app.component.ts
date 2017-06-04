@@ -116,12 +116,7 @@ export class AppComponent implements OnInit,OnDestroy {
         
 
       }
-       ngOnDestroy() {
-         if(this.sub){
-          this.sub.unsubscribe();
-         }
-        
- }
+    
       private startTimer() {
         let timer = Observable.timer(1, 1000);
         this.sub = timer.subscribe(
