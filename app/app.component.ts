@@ -1,4 +1,4 @@
-import {Component,OnInit,OnDestroy} from 'angular2/core';
+import {Component,OnInit} from 'angular2/core';
 import game from './game';
 import {Subscription} from 'rxjs/Rx';
 import { Observable} from 'rxjs/Rx';
@@ -105,7 +105,7 @@ import { Observable} from 'rxjs/Rx';
    
 })
 
-export class AppComponent implements OnInit,OnDestroy { 
+export class AppComponent implements OnInit{ 
     public board = game.createBoard();   
      ticks = 0;
      minutesDisplay: number = 0;
