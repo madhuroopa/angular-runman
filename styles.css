@@ -1,9 +1,9 @@
 body {
     margin: 0px;
     font-family: "Fira Mono", Arial, Helvetica, sans-serif;
-    color: black;
-    background-image:URL('bg.png');
-    font-size: 12pt;
+    color:black;
+    background-image:url('img/bg.png');
+    font-size: 8pt;
 }
 
 .board {
@@ -13,12 +13,12 @@ body {
 
 .row {
     width: 1000%;
-    height: 90%;
+    height: 100%;
 }
 
 .cell {
     float: left;
-    background-color:lightyellow;
+    background-color: lightcyan;
     height: 100%;
     width: 8.3%;
     outline: 1px solid black;
@@ -32,40 +32,159 @@ body {
     transform: translate(-50%, -50%);
     font-size: 100pt;
 }
-
+h2 {
+    color: darkgreen;
+    margin-top: 12px; 
+    text-align: center;   
+  }    
 .board {
     text-align: center;
     position: fixed;
-    top: 10%;
+    top: 12.5%;
     left: 27%;
     transform: translate(-50%, -50%);
 }
-.hero img{
-    background: URL('hero.png') 0 0 no-repeat;
-    max-height: 96%;
-    width: 65%;
-    background-position-x: 0;
+.hero {
+  width:50px;
+  height:50px;
+  z-index: 1;
+  position: absolute;
+
+}
+.hero .hero_image {
+    background: url('img/hero.png') no-repeat;
+    background-position-x: 0px;
+    height: 100%;
+    width: 60%;
+    margin-left: 10px;
     animation: walkingRight .5s steps(4) infinite;
+} 
+.walkingBottom {
+    background-position: 0 0;
+    animation: walkingBottom .5s steps(4) infinite;
+  }
+  .walkingLeft {
+    background-position: 0  -48px;
+    animation: walkingLeft .5s steps(4) infinite;
+  }
+  .walkingRight {
+    background-position: 0 -96px;
+    animation: walkingRight .5s steps(4) infinite;
+  }
+  .walkingTop {
+    background-position: 0 -144px;
+    animation: walkingTop .5s steps(4) infinite;
+  }
+@keyframes walkingBottom {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -128px 0;
+    }
+}
+@keyframes walkingLeft {
+    from {
+      background-position: 0 -48px;
+    }
+    to {
+      background-position: -128px -48px;
+    }
+}
+@keyframes walkingRight {
+    from {
+      background-position: 0 -96px;
+    }
+    to {
+      background-position: -128px -96px;
+    }
+}
+@keyframes walkingTop {
+    from {
+      background-position: 0 -144px;
+    }
+    to {
+      background-position: -128px -144px;
+    }
 }
 
-@keyframes walkingRight {
-  
-    from {
-    background-position: 0 -96px;
-    }
-    to {
-    background-position: -128px -96px;
-    }
-}
-.flag img{
-    background-image:URL('flag.png');
+
+.flag img {
+    background-image: url('img/flag.png');
     animation: flag 1s steps(10) infinite;
 }
+
 @keyframes flag {
-    from {
+  from {
     background-position: 0 0;
+  }
+  to {
+    background-position: 0 -500px;
+  }
+}
+
+.guard {
+  width:50px;
+  height:50px;
+  z-index: 1;
+  position: absolute;
+
+}
+.guard .guard_image {
+    background: url('img/guard.png') no-repeat;
+    background-position-x: 0px;
+    height: 100%;
+    width: 60%;
+    margin-left: 10px;
+    animation: walkingRight .5s steps(4) infinite;
+} 
+  .walkingBottom {
+    background-position: 0 0;
+    animation: walkingEnemyBottom .6s steps(4) infinite;
+  }
+  .walkingLeft {
+    background-position: 0  -48px;
+    animation: walkingEnemyLeft .6s steps(4) infinite;
+  }
+  .walkingRight {
+    background-position: 0 -96px;
+    animation: walkingEnemyRight .6s steps(4) infinite;
+  }
+  .walkingTop {
+    background-position: 0 -144px;
+    animation: walkingEnemyTop .6s steps(4) infinite;
+  }
+
+  @keyframes walkingEnemyBottom {
+    from {
+      background-position: 0 0;
     }
     to {
-     background-position: 0 -500px;
+      background-position: -200px 0;
     }
+  }
+  @keyframes walkingEnemyLeft {
+    from {
+      background-position: 0 -48px;
+    }
+    to {
+      background-position: -200px -48px;
+    }
+  }
+  @keyframes walkingEnemyRight {
+    from {
+      background-position: 0 -96px;
+    }
+    to {
+      background-position: -200px -96px;
+    }
+  }
+  @keyframes walkingEnemyTop {
+    from {
+      background-position: 0 -144px;
+    }
+    to {
+      background-position: -200px -144px;
+    }
+  }
 }
