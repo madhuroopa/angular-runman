@@ -104,50 +104,35 @@ import { Observable} from 'rxjs/Rx';
     `
    
 })
-
 export class AppComponent implements OnInit{ 
-    public board = game.createBoard();   
-     ticks = 0;
-     minutesDisplay: number = 0;
-     secondsDisplay: number = 0;
-     sub:Subscription<any>;
-     ngOnInit() {
-        this.startTimer();
-        
-
-      }
-    
-      private startTimer() {
-        let timer = Observable.timer(1, 1000);
-        this.sub = timer.subscribe(
-          t => {
-            this.ticks = t;
-            this.secondsDisplay = this.getSeconds(this.ticks);
-                this.minutesDisplay = this.getMinutes(this.ticks);
-                
-              }
-         );
+  public board = game.createBoard();   
+  ticks = 0;
+  minutesDisplay: number = 0;
+  secondsDisplay: number = 0;
+  sub:Subscription<any>;
+  ngOnInit() {
+    this.startTimer();
+  }
+  private startTimer() {
+    let timer = Observable.timer(1, 1000);
+    this.sub = timer.subscribe(
+      t => {
+        this.ticks = t;
+        this.secondsDisplay = this.getSeconds(this.ticks);
+        this.minutesDisplay = this.getMinutes(this.ticks);
+      });
+  }
+  private getSeconds(ticks: number) {
+    let seconds  = 120;
+    if (this.ticks > seconds) {
+      alert("Game Over !! try again.");
     }
-    
-     private getSeconds(ticks: number) {
-          let seconds  = 210;
-      
-       if (this.ticks > seconds) {
-            alert("Game Over !! try again.");
-      
-        }
-       
-       return this.pad(ticks % 60);
-      }
-     private getMinutes(ticks: number) {
-      
-         return this.pad((Math.floor(ticks / 60)) % 60);
-      }
-     private pad(digit: any) { 
-       return digit <= 9 ? '0' + digit : digit;
-      }
-     
-    
-
-}   
-  
+    return this.pad(ticks % 60);
+  }
+  private getMinutes(ticks: number) {
+    return this.pad((Math.floor(ticks / 60)) % 60);
+  }
+  private pad(digit: any) { 
+    return digit <= 9 ? '0' + digit : digit;
+  }
+} 
