@@ -2,7 +2,11 @@
 
   <head>
     <title>Angular 2 QuickStart</title>
-
+    <style>
+      #canvas{
+        outline: 1px solid #000;
+      }
+    </style>
     <!-- 1. Load libraries -->
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
@@ -35,6 +39,33 @@
   <body>
     <my-app>Loading...</my-app>
     <timer></timer>
+    <canvas id = "hero" height="400" width="600"></canvas>
+    <script>
+      var canvas = document.getElementById("hero");
+      var context = canvas.getContext('2d');
+      var xPos = 0;
+      var yPos = 0;
+      context.rect(xPos, yPos, 50, 50);
+      context.stroke();
+      function move(e) {
+        if(e.keyCode == 39) {
+          xPos += 5;
+        }
+        if(e.keyCode == 37) {
+          xPos -= 5;
+        }
+        if(e.keyCode == 40) {
+          yPos += 5;
+        }
+        if(e.keyCode == 38) {
+          yPos -= 5;
+        }
+        canvas.width = canvas.width; 
+        context.rect(xPos, yPos, 50, 50);
+        context.stroke();
+      }
+      document.onkeydown = move;
+    </script>
   </body>
 
 </html>
