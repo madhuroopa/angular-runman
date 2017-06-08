@@ -3,8 +3,14 @@
   <head>
     <title>Angular 2 QuickStart</title>
     <style>
+      body {
+          margin: 0px;
+          height: auto;
+          overflow: hidden;
+      }
       #canvas{
         outline: 1px solid #000;
+        margin: 100px;
       }
     </style>
     <!-- 1. Load libraries -->
@@ -49,16 +55,16 @@
       context.stroke();
       function move(e) {
         if(e.keyCode == 39) {
-          xPos += 5;
+          xPos <= 545 ? xPos += 5 : xPos =550;
         }
         if(e.keyCode == 37) {
-          xPos -= 5;
+          xPos != 0 ? xPos -= 5 : xPos =0;
         }
         if(e.keyCode == 40) {
-          yPos += 5;
+          yPos <= 345 ? yPos += 5 : yPos =350;
         }
         if(e.keyCode == 38) {
-          yPos -= 5;
+          yPos != 0 ? yPos -= 5 : yPos =0;
         }
         canvas.width = canvas.width; 
         context.rect(xPos, yPos, 50, 50);
