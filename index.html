@@ -51,6 +51,8 @@
       var context = canvas.getContext('2d');
       var xPos = 0;
       var yPos = 0;
+      var t = 100;
+      var l = 145;
 //      var img=new Image();
 //      img.onload=function()
 //      {
@@ -59,25 +61,23 @@
 //      img.className="hero_image walkingBottom";
       var image = document.createElement("img");
       image.className = "hero_image";
-      image.src = './img/hero.png';
-      image.onload=function() {
-          context.drawImage(image,xPos,yPos);
-        }
 //      image.style.position = "absolute";
-//      image.style.left = Math.floor((Math.random() * 100)) + "%";
-//      image.style.top = Math.floor((Math.random() * 100)) + "%";
+         image.style.left = l + "px";
+         image.style.top = t + "px";
 //      image.style.backgroundColor = "black";
 //      image.style.width = xPos + "px";
 //      image.style.height = yPos + "px";
-      //document.body.appendChild(image);
+      document.body.appendChild(image);
       context.rect(xPos, yPos, 50, 50);
       context.stroke();
       function move(e) {
         if(e.keyCode == 39) {
           xPos <= 545 ? xPos += 5 : xPos =550;
+          image.style.left = (l + xPos) + "px";
         }
         if(e.keyCode == 37) {
           xPos != 0 ? xPos -= 5 : xPos =0;
+          image.style.left = (xPos - 5 ) + "px";
         }
         if(e.keyCode == 40) {
           yPos <= 345 ? yPos += 5 : yPos =350;
