@@ -51,11 +51,11 @@ h2 {
   position: absolute;
 
 }
-.hero .hero_image {
+.hero_image {
     background: url('img/hero.png') no-repeat;
     background-position-x: 0px;
     height: 100%;
-    width: 60%;
+    width: 20px;
     margin-left: 10px;
     animation: walkingRight .5s steps(4) infinite;
 } 
@@ -187,4 +187,3 @@ h2 {
       background-position: -200px -144px;
     }
   }
-}
